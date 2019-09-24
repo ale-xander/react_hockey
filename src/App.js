@@ -6,29 +6,33 @@ class App extends Component{
   constructor(){
     super();
     this.state = {
-      string: "hello alex"
+      players: [
+        {
+          name: "Toews",
+          number: '19'
+        },
+        {
+          name: "Kane",
+          number: '88'
+        },
+        {
+          name: "Debrincat",
+          number: '12'
+        },
+      ]
     }
   }
 
   render(){
     return(
       <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {this.state.string}
-        </p>
-        <button onClick={() => this.setState({string: 'yoooo'})}>change text</button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        {
+          this.state.players.map(player => (
+            <h1 key={player.number}> {player.name} </h1>
+
+            ))
+        }
+      </div>
     )
   }
 }
