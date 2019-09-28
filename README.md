@@ -1,8 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a quick demo I made in React to showcase use of state and props in order to display and search the 2019 roster of the Chicago Blackhawks. The app is deployed on GitHub pages: https://ale-xander.github.io/react_hockey/
 
-## Available Scripts
+I also had to create a REST api json server to host the data for this app. Currently it has one route - /profile, which has 7 rsesources:
 
-In the project directory, you can run:
+- id
+- name
+- position
+- age
+- birthplace
+- gamesPlayed
+- picture
 
-### `npm start`
-
+It is hosted on Heroku so it might take a few seconds for the dynos to load the JSON server the first time you try to access the app! 
+https://json-server-blackhawks.herokuapp.com/
