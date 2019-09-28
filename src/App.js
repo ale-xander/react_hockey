@@ -10,12 +10,16 @@ class App extends Component{
       players: [],
       searchField: ''
     }
+    
   }
 
   componentDidMount(){
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('https://json-server-blackhawks.herokuapp.com/profile')
     .then(response => response.json())
-    .then(users => this.setState({players: users}))
+    .then(profile => this.setState({players: profile}))
+  }
+  handleChange = (e) => {
+    this.setState({searchField: e.target.value})
   }
 
   render(){
@@ -25,9 +29,10 @@ class App extends Component{
         )
     return(
       <div className="App">
+      <h1>Blackhawks 2019 Roster</h1>
         <SearchBox 
           placeholder = 'search players'
-          handleChange = {e => this.setState({searchField: e.target.value})}
+          handleChange = {this.handleChange}
         />
         <CardList players={filteredPlayers} />
          
